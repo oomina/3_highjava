@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/PC-04/Desktop/고급자바과제/activation-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-04/Desktop/고급자바과제/commons-email-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-04/Desktop/고급자바과제/mail-1.4.7.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

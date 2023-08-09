@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="resManage">
+
+	<select id="getResManage" parameterType="resManageVo" resultType="resManageVo">
+		select *
+		from res_manage
+		where bdh_id = #{bdh_id}
+		and day_code = #{day_code}
+	</select>
+	
+	<select id="getResDetail" parameterType="resManageVo" resultType="resDetailVo">
+		select a.res_code, a.res_type, a.eq_code, a.mem_id, b.CLIENT_NAME
+		from reservation a, client b
+		where a.bdh_id= #{bdh_id}
+		and a.day_code=#{day_code}
+		and a.time_code=#{time_code}
+		and b.client_id=a.mem_id
+	</select>
+
+</mapper>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BCL">
+<!-- 	BCLVo -->
+	<select id="clientCheck" parameterType="BCLVo" resultType="memberVo">
+		select B.mem_id, b.MEM_BLOOD_TYPE, b.MEM_REGNO1, b.MEM_REGNO2
+			from client a, member b
+			where a.client_name=#{mem_name}
+			and b.mem_regno1=#{mem_regno1}
+			and b.mem_regno2=#{mem_regno2}
+			and a.client_id = b.mem_id
+	</select>
+	
+	<insert id="bdCardSet" parameterType="BCLVo">
+		insert into BD_CARD values(CARD_KEY.NEXTVAL, #{bd_date}, #{bd_type},
+		                   #{blood_location}, 0, #{bdh_id}, #{mem_id},
+		                   #{card_owner}, #{card_form}, #{bd_btype},
+		                   #{mem_regno1}, #{bd_gender})
+	</insert>
+	
+	<select id="dayCodeGet" parameterType="BCLVo" resultType="string">
+		select day_code
+			from reservation
+		where mem_id = #{mem_id}
+		 and bdh_id = #{bdh_id}
+	</select>
+	
+	<select id="bdCodeGet" parameterType="BCLVo" resultType="string">
+		select bd_date
+			from bd_card
+		where mem_id = #{mem_id}
+		 and bdh_id= #{bdh_id}
+	</select>
+	
+</mapper>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="reply">
+	<!-- 댓글 작성 -->
+	<insert id="insertReply" parameterType="replyVo">
+		insert into reply
+		values(REPLY_KEY.nextval, #{client_id}, #{board_code}, #{reply_content}, sysdate, sysdate)
+	</insert>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="deleteReply" parameterType="replyVo">
+		delete from reply
+		where reply_code = #{reply_code}
+		and client_id = #{client_id}
+	</delete>
+	
+	<!-- 게시글 수정: 제목, 내용, 수정날짜 -->
+	<update id="updateReply" parameterType="replyVo">
+		update reply
+		set reply_content = #{reply_content},
+			reply_modify = sysdate
+		where reply_code = #{reply_code}
+		and client_id = #{client_id}
+	</update>
+	
+	<!-- 댓글 리스트 -->
+	<select id="selectReply" parameterType="String" resultType="replyVO">
+		select * from reply
+		where board_code = #{board_code}
+		order by reply_code desc
+	</select>
+</mapper>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

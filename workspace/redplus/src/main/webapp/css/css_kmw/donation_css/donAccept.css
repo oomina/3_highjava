@@ -1,0 +1,106 @@
+@charset "UTF-8";
+#pl-title{
+	width:100%;
+	padding-bottom:30px;
+	border-bottom:2px solid #d9534f;
+	margin-bottom: 50px;
+}
+#pl-title h1{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+#info-text{
+	text-align: center;
+	width: 100%;
+	margin: 30px auto;
+	border: 2px solid #dad8d9;
+	border-radius:15px;
+	height: 150px;
+}
+#info-text p{
+	margin-top:30px;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+#info-text span {
+	color:#c16d13;
+}
+#reqinfo p{
+	font-size: 1.2em;
+	font-weight: bold;
+	color:#d9534f;
+}
+#reqList{
+	margin: 30px auto;
+}
+#reqTb{
+	border-top: 2px solid black;
+	width: 100%;
+	table-layout: fixed;
+	text-align: center;
+	border-bottom: 2px solid black;
+}
+#reqList td{
+	vertical-align: middle;
+}
+#dBtn{
+	background:#d9534f;
+	border: none;
+	color: white;
+	border-radius: 15px;
+	font-weight: bold;
+}
+#conTb{
+	height: 60px;
+	font-weight: bold;
+}
+#modalTb{
+	border-top: 2px solid black;
+	width: 100%;
+	table-layout: fixed;
+	border-bottom: 2px solid black;
+	font-weight: bold;
+}
+#modalTb tr{
+	border: 1px solid #dad8d9;
+}
+#modalTb tr td{
+	border: 1px solid #dad8d9;
+}
+
+#modal-content{
+	height: 100px;
+}
+.mT{
+	vertical-align: middle;
+	text-align: center;
+	font-size: 1.3em;
+	
+}
+#cardList{
+	margin-top:30px;
+}
+#cardList p{
+	text-align : center;
+	font-size: 1.2em;
+	font-weight: bold;
+	color:#b02a37;
+}
+#resListBtn{
+	border-top: 2px solid black;
+	margin-top: 30px;
+	width: 100%;
+	table-layout: fixed;
+	text-align: center;
+	border-bottom: 2px solid black;
+}
+#resListBtn tr{
+	height: 50px;
+	vertical-align: center;
+	border: 1px solid #dad8d9;
+}
+#resListBtn tr td{
+	vertical-align: middle;
+	border: 1px solid #dad8d9;
+}
+

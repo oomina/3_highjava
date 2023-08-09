@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ddon">
+	
+	
+	
+	<!-- 기태 -->
+	
+	<!-- 이전 지정헌혈 요청내역 불러오기 -->
+	<select id="getPrevList" parameterType="string" resultType="ddonVo">
+		select DD_CODE, DD_BLOOD_TYPE, DD_BD_TYPE, DD_DATE, HOS_ID,
+		(select count(*) from dd_accept where dd_code = d.DD_CODE) as dd_accept
+		from directed_donation d
+		where HOS_ID = #{hos_id}
+		order by rownum desc
+	</select>
+	
+	<insert id="writeDdReq" parameterType="ddonVo">
+	insert into DIRECTED_DONATION values (DD_KEY.nextval, #{dd_blood_type} , #{dd_bd_type} , #{dd_date} , #{hos_id})
+	</insert>
+	
+	<!-- 기존 요청내역을 삭제 -->
+	<delete id="deleteDdReq" parameterType="string">
+	delete from DIRECTED_DONATION where DD_CODE = #{dd_code}
+	</delete>
+
+</mapper>

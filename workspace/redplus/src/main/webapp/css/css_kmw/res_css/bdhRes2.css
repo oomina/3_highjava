@@ -1,0 +1,97 @@
+@charset "UTF-8";
+#select{
+		width:90%;
+		margin: 50px auto 10px auto;
+		display: flex;
+		flex-direction: column;
+		border-top: 2px solid black;
+		border-bottom: 1px solid #dad8d9;
+		
+	}
+	.selectValue{
+		display: flex;
+	}
+	.sTitle{
+		flex:20%;
+		border-bottom: 1px solid #dad8d9;
+		border-left: 1px solid #dad8d9;
+		text-align: center;
+		background:#f6f6f6;
+		font-weight: bold;
+	}
+	.sValue{
+		flex:80%;
+		display: inline-block;
+		margin: auto 10px;
+	}
+	#inputAddr{
+		width:50%;
+	}
+	#searchBtn{
+		background:#d9534f;
+		border:none;
+		color: white;
+		width: 70px;	
+	}
+	#result{
+		width:90%;
+		margin: 50px auto 10px auto;
+		display: flex;
+		flex-direction: column;
+		border-top: 2px solid black;
+		border-bottom: 1px solid #dad8d9;
+		
+	}
+	#nameVal{
+		width: 30%;
+		height: 20px;
+		background: #f6f6f6;
+		text-align: center;
+		border: 1px solid #dad8d9;
+		font-weight: bold;
+		
+	}
+	#addrVal{
+		width:50%;
+		height: 30px;
+		text-align: center;
+		font-weight: bold;
+		background:#f6f6f6;
+	}
+	#addrCol{
+		width: 100%;
+	}
+	#selectBdh {
+		width: 50%;
+		height:30px;
+  		background-color: #f42e3d;
+  		color: #fff;
+  		border: none;
+  		border-radius: 10px;
+  		text-align: center;
+	}
+	#bdhTb {
+  		width: 100%;
+  		table-layout: fixed;
+	}
+	#bdhTb td:first-child {
+  		width: 30px;
+	}
+	#bdhTb td:nth-child(1){
+		width: 80px;
+	}
+	#bdhTb td:nth-child(3)  
+	{
+ 	 	width: 350px; 
+	}
+	#bdhTb td:nth-child(2)  
+	{
+ 	 	width: 150px; 
+	}
+	#bdhTb td{
+		text-align: center;
+	}
+	#map{
+		width:100%;
+		margin: 10px auto;
+	}

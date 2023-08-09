@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="stock">
+<!-- 	stockVo -->
+	<select id="AllStockList" parameterType="stockVo" resultType="stockVo">
+			select b.* from bd_card a, blood_stock b
+    		where b.BD_CODE=a.BD_CODE
+    		and b.store_day=#{store_day}
+            and b.bdh_id=#{bdh_id}
+            and b.RELEASE_DAY='0'
+            <if test='bs_blood_type != "전체선택"'>
+				 and b.BS_BLOOD_TYPE = #{bs_blood_type}
+			</if>
+            <if test='dt_type != "전체선택"'>
+				 and b.DT_TYPE= #{dt_type}
+			</if>
+	</select>
+	
+	<select id="AllResStockList" parameterType="stockVo" resultType="stockVo">
+			select b.* from bd_card a, blood_stock b
+    		where b.BD_CODE=a.BD_CODE
+    		and b.store_day=#{store_day}
+            and b.bdh_id=#{bdh_id}
+            and b.RELEASE_DAY!='0'
+            <if test='bs_blood_type != "전체선택"'>
+				 and b.BS_BLOOD_TYPE = #{bs_blood_type}
+			</if>
+            <if test='dt_type != "전체선택"'>
+				 and b.DT_TYPE= #{dt_type}
+			</if>
+	</select>
+	
+	<select id="NoStockList" parameterType="string" resultType="BCLVo">
+ 			SELECT a.*
+   			FROM bd_card a
+    		LEFT JOIN blood_stock b ON b.BD_CODE=a.BD_CODE
+    		WHERE b.BD_CODE IS NULL
+    		and a.bdh_id = #{data}
+	</select>
+	
+	<select id="detailNoStock" parameterType="string" resultType="BCLVo">
+	    select * from bd_card
+   		where BD_CODE = #{data}
+	</select>
+	
+	<insert id="stockSet" parameterType="stockVo" >
+	    insert into blood_stock
+        values(#{bs_blood_type}, #{store_day}, '0', #{dt_type} , #{bdh_id}, #{bd_code}, #{bd_region})
+	</insert>
+	
+	<select id="getRegion" parameterType="string" resultType="string">
+		  select BDH_REGION
+            from bdh 
+            where bdh_id=#{data}
+	</select>
+
+</mapper>

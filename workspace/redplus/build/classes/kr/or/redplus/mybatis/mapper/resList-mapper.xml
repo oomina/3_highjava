@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="resList">
+	<!-- 다음 헌혈가능 날짜 -->
+	<select id="nextResDate" parameterType="String" resultType="String">
+		SELECT MAX(res_able)
+		FROM reservation 
+		WHERE mem_id = #{mem_id} 
+		<!-- AND TO_DATE((SELECT MAX(day_code) FROM reservation WHERE mem_id = #{mem_id}), 'YYYY/MM/DD') >= SYSDATE -->
+	</select>
+	
+	<!-- 헌혈한 횟수 -->
+	<select id="countBd" parameterType="String" resultType="int">
+		SELECT COUNT(*) 
+		FROM reservation 
+		WHERE mem_id = #{mem_id}
+		<![CDATA[ 
+		AND TO_DATE(day_code, 'YYYY/MM/DD') <= SYSDATE
+		]]>
+	</select>
+	<!-- 헌혈의집 아이디 -->
+	<select id="bdhId" parameterType="String" resultType="String">
+		select DISTINCT bdh_id from reservation where mem_id = #{memId}
+	</select>
+	
+	<!-- 혈액원 이름 -->
+	<select id="bbName" parameterType="String" resultType="String">
+		select DISTINCT bb_name from blood_bank a, bdh b 
+		where a.BB_CODE = b.BB_CODE and b.BDH_ID = #{bdh_id}
+	</select>
+	
+	<!-- 헌혈의집 ID추출 -->
+	<select id="findBdhId" parameterType="String" resultType="String">
+		SELECT CLIENT_ID FROM CLIENT WHERE CLIENT_NAME = #{bdh_name}
+	</select>
+	
+	<!-- 과거헌혈 기록 -->
+	<select id="lastRes" parameterType="String" resultType="bdhresVo">
+	  select a.DAY_CODE, a.RES_TYPE, c.BB_NAME, d.CLIENT_NAME as bdh_name
+		from reservation a, bdh b, blood_bank c, client d
+		where b.bdh_ID = d.CLIENT_ID
+		and b.BDH_ID = a.BDH_ID
+		and b.BB_CODE = c.BB_CODE 
+		and a.mem_id = #{mem_id}
+		<![CDATA[
+  		AND TO_DATE(a.day_code,'YYYY/MM/DD') <= SYSDATE
+  		]]>
+	</select>
+	
+	
+	<!-- 현재헌혈 기록 -->
+	<select id="curRes" parameterType="String" resultType="bdhresVo">
+	                 
+     select a.DAY_CODE, a.RES_TYPE, c.BB_NAME, d.CLIENT_NAME as bdh_name
+		from reservation a, bdh b, blood_bank c, client d
+		where b.bdh_ID = d.CLIENT_ID
+		and b.BDH_ID = a.BDH_ID
+		and b.BB_CODE = c.BB_CODE 
+		and a.mem_id = #{mem_id}
+		<![CDATA[
+  		AND TO_DATE(a.day_code,'YYYY/MM/DD') >= SYSDATE
+  		]]>
+     </select>
+     
+     <!-- 헌혈예약코드 -->
+     <select id="resCode" parameterType="bdhresVo" resultType="String">
+     	select res_code from reservation where DAY_CODE = #{day_code} and MEM_ID = #{mem_id}
+     </select>
+     
+     <!-- 예약취소하기 -->
+	<delete id="deleteRes" parameterType="String">
+		delete from reservation where res_code = #{res_code}
+	</delete>
+	
+</mapper>

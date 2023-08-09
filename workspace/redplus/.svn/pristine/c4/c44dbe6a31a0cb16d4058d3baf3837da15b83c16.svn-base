@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+#pl-title{
+   width:100%;
+   padding-bottom:30px;
+   border-bottom:2px solid #d9534f;
+   margin-bottom: 50px;
+}
+#pl-title h1{
+   font-size: 1.5em;
+   font-weight: bold;
+}
+
+#bdhManageContainer {
+  width: 100%;
+  margin-top: 150px;
+  text-align: center;
+
+}
+
+#bdhManageMain {
+  width : 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#dayChoice {
+  margin-bottom: 20px;
+  text-align: left;
+  
+}
+
+ #dateId {
+   background-color: #fff;
+   border : none;
+   box-shadow: 1px 1px 2px 2px darkgray;
+   border-radius: 5px;
+   padding: 5px;
+   font-size: 16px;
+   text-align: center;
+ }
+
+#resList {
+  margin: 0px auto;
+  width: 80%;
+  border : none;
+  box-shadow: 1px 1px 2px 2px #dad8d9;
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+#resList table{
+	width : 100%;
+}
+
+#resList tr{
+	font-size:1.2em;	
+}
+
+#resList tr:first-child{
+	font-size: 1.3em;
+	color : black;
+	border: 1px soild darkgray;
+  	font-weight: bold;
+}
+
+#resList td{
+	border-bottom: 1px solid #dad8d9;;
+	text-align: center;
+}
+
+#resList tr:first-child td{
+	border-bottom: 3px solid #dad8d9;;
+}
+
+
+#resList table td{
+	padding: 20px;
+}
+
+#resList td:first-child{
+	width: 30%;
+}
+
+#noDetail{
+	text-align: center;
+	padding: 20px;
+}
+
+#noDetail img{
+	width: 5%;
+	margin: 0 auto;
+	
+}
+
+#noDetail h2{
+	margin: 15px auto;
+ 	font-size: 1.2em;
+ 	color: black;
+ }
+ 
+#detailList{
+	display: felx;
+	text-align: center;
+	width: 100%;
+
+
+}
+.modal-dialog{
+  max-width: 50%;
+}
+
+#detailList table {
+	width: 85%;
+	margin: 30px auto;
+ 	border : none;
+  	box-shadow: 1px 1px 2px 2px #dad8d9;
+ 	border-radius: 10px;
+
+}
+
+
+#detailList tr{
+	font-size: 1.2em;
+}
+
+#detailList tr:first-child{
+	font-size: 1.4em;
+	color : black;
+	border: 1px soild darkgray;
+  	font-weight: bold;
+}
+
+#detailList td{
+	border-bottom: 1px solid #dad8d9;;
+	text-align: center;
+}
+
+#detailList tr:first-child td{
+	border-bottom: 3px solid #dad8d9;;
+}
+
+
+#detailList table td{
+	padding: 20px 1%;
+}
+
+#detailList tr td:nth-child(4){
+	padding-right: 20px;
+}

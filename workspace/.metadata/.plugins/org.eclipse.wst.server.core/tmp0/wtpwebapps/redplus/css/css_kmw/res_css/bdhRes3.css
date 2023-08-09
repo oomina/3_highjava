@@ -1,0 +1,41 @@
+@charset "UTF-8";
+article{
+		width: 90%;
+		margin: 0px auto;
+		margin-top: 50px;
+		display: flex;
+		flex-direction: column;
+	}
+	#resInfo{
+		display: flex;
+		border-radius: 15px;
+		box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+	}
+	#resimg{
+		margin: 5% 50px;
+	}
+	#resInfo img{
+		width:60px;
+		height: 60px;
+	}
+	#infoText{
+		margin:auto 0px;
+	}
+	.infoTitle{
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+	.infoTitle span{
+		color:#d9534f;
+	}
+	.infoContent{
+		color:gray;
+	}
+	#calendar{
+		width: 90%;
+		margin: 0px auto;
+		margin-top: 50px;
+		display: flex;
+		flex-direction: column;
+	}
+	

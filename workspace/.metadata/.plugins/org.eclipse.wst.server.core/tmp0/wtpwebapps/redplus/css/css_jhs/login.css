@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+#main{
+		 margin-top: 20px;
+     margin-left: 30%;
+     margin-right: 30%;
+     display: flex;
+     flex-direction: column;
+     width: 40%;
+
+ }
+ #info-text p{
+     font-size: 1.5em;
+     text-align: center;
+ }
+ span{
+     color: #e05757;
+ }
+ #logo{
+     width: 230px;
+
+     margin: 0px auto;
+ }
+ article{
+     width: 90%;
+     height: 330px;
+     border: 1px solid gray;
+     padding-left: 10px;
+     margin: 0px auto;
+     border-radius: 20px;
+     border: none;
+     box-shadow: 0px 0px 8px 0px  #e05757;
+     margin-top: 20px;
+     margin-bottom: 20px;
+     text-align: center;
+ }
+ .Text{
+ 	margin-top : 30px;
+ 	font-size: 1.2em;
+ 	font-weight : bold;
+ 	color: #1e95f7;
+ }
+ 
+ 
+ .input_login{
+     height: 40px;
+     width: 30%;
+     margin: 5px;
+     border-radius: 10px;
+     text-align: center;
+     }
+     
+ #login_button{
+     margin-top : 30px;
+     text-align: center;
+     width: 17%;
+     height: 40px;
+     background: #fa5959;
+     color: white;
+     border-radius: 10px;
+     border: none;
+    }
+ #find_index{
+ 	text-align: center;
+ 	margin-top: 10px;
+ }   
+ 
+ #find_index a{
+	color: #0080ff;
+ 	margin-right: 25px;
+ }
+ 

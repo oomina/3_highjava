@@ -1,0 +1,81 @@
+@charset "UTF-8";
+#pl-title{
+	width:100%;
+	padding-bottom:30px;
+	border-bottom:2px solid #d9534f;
+	margin-bottom: 50px;
+}
+#pl-title h1{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+#don-main{
+	width: 100%;
+	height: 400px;
+	margin: 0px auto;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+.req{
+	display: flex;
+}
+.info{
+	flex: 30%;
+	border: 1px solid gray;
+	text-align: center;
+	border-right: none;
+	background: #dad8d9;
+	
+}
+.info p{
+	font-weight: bold;
+}
+.content input[name=id]{
+	width: 100%;
+	border: none;
+	text-align: center;
+}
+.content input[name=title]{
+	width: 100%;
+	border: none;
+}
+.content{
+	flex:70%;
+	border: 1px solid gray;
+}
+#reqContent{
+	width: 100%;
+	height: auto;
+}
+#request p{
+	display:block;
+	margin: 30px auto;
+}
+#btnBox{
+	margin-top:10px;
+}
+#reqBtn{
+	float: right;
+	width: 100px;
+	background: #d9534f;
+	color: white;
+	border: none;
+	height: 30px;
+}
+#rqText{
+	margin-top: 60px;
+}
+#reqinfo-text{
+	margin: 50px auto;
+	width: 80%;
+	
+}
+#reqinfo-text p{
+	font-weight: bold;
+	color:#d9534f;
+}
+textarea{
+	width: 100%;
+	height: 100%;
+}

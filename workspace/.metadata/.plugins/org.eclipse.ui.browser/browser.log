@@ -1,0 +1,136 @@
+
+3월 29, 2023 12:18:44.803 NEW SESSION
+3월 29, 2023 12:18:44.803 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+3월 30, 2023 09:29:58.365 NEW SESSION
+3월 30, 2023 09:29:58.365 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 10:09:24.751 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 10:27:38.553 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 10:37:35.582 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 10:42:23.859 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 11:22:47.925 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 11:45:01.654 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 11:51:44.320 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 12:11:50.480 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 12:16:29.593 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 12:37:38.982 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 12:41:27.694 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 12:45:09.434 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 12:45:49.122 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 30, 2023 12:46:59.885 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+3월 31, 2023 09:09:38.969 NEW SESSION
+3월 31, 2023 09:09:38.969 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 31, 2023 09:30:06.106 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 31, 2023 10:20:05.692 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 01, 2023 09:52:15.731 NEW SESSION
+4월 01, 2023 09:52:15.731 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 03, 2023 09:12:06.191 NEW SESSION
+4월 03, 2023 09:12:06.191 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 03, 2023 12:12:03.979 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 03, 2023 12:21:25.886 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 04, 2023 10:33:20.357 NEW SESSION
+4월 04, 2023 10:33:20.357 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 04, 2023 10:37:40.366 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 04, 2023 10:38:31.667 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 04, 2023 10:40:06.45 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 04, 2023 10:57:53.61 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 04, 2023 10:59:22.297 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 04, 2023 10:59:52.631 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 04, 2023 11:00:19.836 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 04, 2023 11:04:30.221 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 04, 2023 11:12:34.543 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 04, 2023 12:26:43.421 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+4월 04, 2023 12:26:43.497 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 04, 2023 12:28:41.412 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 04, 2023 12:28:42.09 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+
+4월 05, 2023 09:10:43.522 NEW SESSION
+4월 05, 2023 09:10:43.522 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 09:11:04.604 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 05, 2023 12:09:44.137 NEW SESSION
+4월 05, 2023 12:09:44.137 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 12:11:24.17 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 12:12:41.153 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 12:13:39.883 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 05, 2023 18:53:59.132 NEW SESSION
+4월 05, 2023 18:53:59.132 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 05, 2023 20:10:11.794 NEW SESSION
+4월 05, 2023 20:10:11.794 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:19:42.39 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:20:24.99 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:20:54.226 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:24:23.552 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:30:47.523 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:31:02.822 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:31:26.643 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:31:36.785 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:32:03.763 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:32:20.106 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:33:11.802 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:33:38.815 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:36:25.563 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:38:58.278 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:43:07.862 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 05, 2023 20:52:04.925 NEW SESSION
+4월 05, 2023 20:52:04.925 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 20:53:03.825 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 21:01:48.677 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 21:02:32.947 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 05, 2023 21:05:37.220 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+4월 05, 2023 21:32:34.185 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 06, 2023 09:25:57.646 NEW SESSION
+4월 06, 2023 09:25:57.646 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 09:26:06.771 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 09:29:02.678 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 09:30:26.783 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 09:33:28.19 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 09:39:57.720 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 09:44:17.363 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 09:59:29.989 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 09:59:41.327 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 10:00:26.297 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 10:10:20.658 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 10:16:43.907 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 10:17:53.43 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 10:44:38.463 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 10:48:47.03 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 10:59:20.132 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 11:19:52.223 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 11:20:14.244 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 11:27:35.529 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 11:27:59.768 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 11:36:37.18 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 11:39:14.647 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 11:39:41.237 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 11:45:53.235 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 11:53:17.978 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 12:10:59.614 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 12:11:14.924 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 12:11:28.509 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 12:12:03.849 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 12:12:58.534 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 12:13:05.328 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 12:16:54.408 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 12:35:17.707 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 12:37:11.584 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 06, 2023 12:44:37.868 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 13, 2023 17:31:11.734 NEW SESSION
+4월 13, 2023 17:31:11.735 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 19, 2023 09:29:28.434 NEW SESSION
+4월 19, 2023 09:29:28.434 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 19, 2023 10:05:46.915 [15964:3480:0419/100546.915:ERROR:page_load_metrics_update_dispatcher.cc(178)] Invalid first_paint (unset) for first_image_paint 0.14 s
+4월 19, 2023 10:32:38.661 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 20, 2023 15:44:53.443 NEW SESSION
+4월 20, 2023 15:44:53.443 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.

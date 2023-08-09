@@ -1,0 +1,47 @@
+package kr.or.redplus.controller.board;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.or.redplus.service.board.BoardServiceImpl;
+import kr.or.redplus.service.board.IBoardService;
+import kr.or.redplus.vo.PageVO;
+
+@WebServlet("/BoardList.do")
+public class BoardList extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		
+		// 전송데이터 가져오기
+		int page = Integer.parseInt(request.getParameter("page")); // 최초 실행시 1이다.
+		String stype = request.getParameter("stype"); // 최초 실행시 없다.
+		String sword = request.getParameter("sword"); // 최초 실행시 없다.
+		
+		// service 객체 얻기
+		IBoardService service = BoardServiceImpl.getInstance();
+		
+		// service 메소드 호출
+		PageVO pVo = service.pageInfo(page, stype, sword);
+		
+		
+		// 페이지
+		request.getRequestDispatcher("/view/submenu_top.html").include(request, response);
+		
+		request.getRequestDispatcher("/view/submenu_content.html").include(request, response);	
+		
+		request.getRequestDispatcher("/view/submenu_bottom.html").include(request, response);
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hos">
+	
+	
+	
+	<!-- 기태 -->
+	
+	<!-- 이전 지정헌혈 요청내역 불러오기 -->
+	<select id="getRegion" parameterType="string" resultType="string">
+	 select hos_region from hospital where hos_id = #{id}
+	</select>
+	
+	
+	<select id="getBloodList" parameterType="string" resultType="stockVo">
+		SELECT * FROM blood_stock WHERE bd_region = (SELECT hos_region FROM hospital WHERE hos_id = #{hos_id}) 
+		AND RELEASE_DAY = '0'
+	</select>
+	
+	<!-- 혈액요청하기 버튼을 눌렀을 때  bloodApply 인서트 -->
+	<insert id="bloodApply" parameterType="bdAppVo">
+	insert into BLOOD_APPLY values (APPLY_KEY.nextval, 'n', #{bd_code}, #{hos_id}, 
+															(SELECT BDH_ID FROM BLOOD_STOCK WHERE bd_code = #{bd_code}))
+	</insert>
+	
+	<update id="updateReleaseDay">
+	UPDATE blood_stock SET release_day = sysdate
+	WHERE bd_code = #{bd_code}
+	</update>
+
+	<!-- 병원 미수령 리스트 조회 -->
+	<select id="notRecieveList" parameterType="string" resultType="stockVo">
+		select * from blood_stock
+    where BD_CODE in (select bd_code from blood_apply where APPLY_CHECK='n' and hos_id=#{hos_id})
+	</select>
+	
+	<!-- 병원 수령확인 로직 -->
+		<!-- 수령체크 Y 변경 -->
+		<update id="recevieCheck" parameterType="string">
+		UPDATE BLOOD_APPLY SET APPLY_CHECK = 'y' WHERE BD_CODE = #{bd_code}
+		</update>
+		<!-- 혈액 위치 id 해당병원으로 변경 -->
+		<update id="bloodPosition" parameterType="bdAppVo">
+		UPDATE BD_CARD SET BLOOD_LOCATION = (select client_name from client where client_id = #{hos_id})
+    where BD_CODE = #{bd_code}
+		</update>
+	
+	
+	<!-- 병원 혈액 재고 조회 -->
+		<!-- 보유리스트 불러오기 -->
+		<select id="getStockList" parameterType="string" resultType="stockVo">
+		select * from blood_stock where bd_code in (select bd_code from blood_apply where apply_check = 'y' and hos_id = #{hos_id})
+		</select>
+		<!-- 사용완료 처리하기 -->
+		<update id="bdStockUse" parameterType="string">
+		update blood_apply set apply_check = '0' where BD_CODE = #{bd_code}
+		</update>
+	
+
+
+	
+
+</mapper>

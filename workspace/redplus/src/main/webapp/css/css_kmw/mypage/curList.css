@@ -1,0 +1,74 @@
+@charset "UTF-8";
+#pl-title{
+	width:100%;
+	padding-bottom:30px;
+	border-bottom:2px solid #d9534f;
+	margin-bottom: 50px;
+}
+#pl-title h1{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+#pl-info{
+		width: 100%;
+		margin: 50px 0 10px 0;
+		display: flex;
+		flex-direction: column;
+		border: 2px solid #dad8d9;
+		border-radius:15px;
+		height: 150px;
+		text-align: center;
+}
+#infoText{
+	margin-top:30px;
+	font-size: 1.0em;
+	font-weight: bold;
+}
+#infoText span{
+	color:#c16d13;
+	font-size: 1.3em;
+}
+.piTitle{
+	margin: 20px auto;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.piTitle span{
+	color: #d9534f;
+}
+
+
+#lastTitle{
+	margin-top: 40px;
+	margin-bottom: 20px;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #d9534f;
+}
+#resList{
+	margin-bottom: 30px;
+}
+#bdTb{
+	border-top: 2px solid black;
+	margin-top: 30px;
+	width: 100%;
+	table-layout: fixed;
+	text-align: center;
+	border-bottom: 2px solid black;
+}
+#noExist{
+	font-weight: bold;
+	font-size: 1.1em;
+}
+#bdTb tr{
+	height:30px;
+}
+#bdTb td{
+	text-align: center;
+	line-height: 1.5;
+}
+#delBtn{
+	border: none;
+	background: #d9534f;
+	color: white;	
+}

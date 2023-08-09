@@ -1,0 +1,69 @@
+@charset "EUC-KR";
+ #resMain{
+            margin-left: 10%;
+            margin-right: 10%;
+            border: 1px solid gray;
+        }
+        #resNav > img{
+            width: 120px;
+            height: 100px;
+        }
+        #resNav{
+            display: flex;
+            border: 1px solid gray;
+            justify-content: space-between;
+        }
+        #resNav > ul{
+            list-style: none;
+        }
+        #resNav > ul > li{
+            float: right;
+            font-size: 15px;
+            margin: 10px;
+        }
+        .topbar{
+            text-decoration: none;
+            color: gray;
+        }
+        #container{
+            display: flex;
+        }
+        #resBox{
+            flex: 70%;
+            border: 1px solid black;
+            height: auto;
+        }
+        aside{
+            display: flex;
+            flex-direction: column;
+            flex: 20%;
+            border: 1px solid black;
+            margin-right: 30px;
+            height: 500px;
+
+        }
+        #sidebar{
+            list-style: none;
+        }
+        aside > h2{
+            border-bottom: 3px solid black;
+        }
+        #join1{
+            margin: 0px auto;
+            width: 95%;
+            height: 700px;
+        }
+        #join2{
+            width: 95%;
+            height: 1200px;
+        }
+        #questBtn{
+            width: 200px;
+            height: 50px;
+            display: block;
+            margin: 0px auto;
+            background: red;
+            border-radius: 30px;
+            color: white;
+            border: none;
+        }

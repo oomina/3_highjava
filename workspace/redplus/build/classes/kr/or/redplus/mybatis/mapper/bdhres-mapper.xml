@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bdhres">
+	<!-- 헌혈예약 조건 여부 파악 전자문진을 하지않으면 예약 불가능 -->
+	<select id="checkRes" parameterType="String" resultType="int">
+		select count(*) from ELEC_QUESTION where mem_id = #{mem_id}
+	</select>
+	
+	<!-- 헌혈의집 찾기 -->
+	<select id="searchBdh" parameterType="String" resultType="bdhresVo">
+		select B.BDH_REGION, C.CLIENT_NAME, C.CLIENT_ADDR, C.CLIENT_TEL
+		from BDH B,CLIENT C
+		where B.BDH_ID = C.CLIENT_ID
+		and (B.BDH_REGION LIKE '%'||#{bdh_region}||'%' OR C.CLIENT_NAME LIKE '%'||#{bdh_region}||'%' OR C.CLIENT_ADDR LIKE '%'||#{bdh_region}||'%')
+	</select>
+	
+	<!-- 예약하기 -->
+	<insert id="insertRes" parameterType="bdhresVo">
+	 	insert into RESERVATION(res_code, res_type, res_date, eq_code, mem_id, bdh_id, day_code, time_code)
+		values(res_key.nextval,#{res_type},SYSDATE,(select eq_code from elec_question where mem_id = #{mem_id} AND ROWNUM = 1),
+		#{mem_id},#{bdh_id},#{day_code},#{time_code})
+	</insert>
+	
+	<!-- 예약취소하기 -->
+	<delete id="deleteRes" parameterType="String">
+		delete from reservation where res_code = '#{res_code};
+	</delete>
+	
+	<!-- 헌혈의집 ID추출 -->
+	<select id="findBdhId" parameterType="String" resultType="String">
+		SELECT CLIENT_ID FROM CLIENT WHERE CLIENT_NAME = #{bdh_name}
+	</select>
+	
+	<!-- 헌혈가능 시간 추출하기 -->
+	<select id="ableTime" parameterType="bdhresVo" resultType="bdhresVo">
+		select  a.DAY_CODE, a.TIME_CODE, d.DT_TYPE ,a.MAX_USER, a.CNT_USER  from res_manage a, bdh b,DONATION_TYPE d
+		where a.BDH_ID = b.BDH_ID 
+		and b.BDH_ID = #{bdh_id} 
+		and d.DT_TYPE = #{dt_type}
+		and a.DAY_CODE = #{day_code}
+	</select>
+	
+	<!-- 회원 개인정보 (예약 마지막페이지)-->
+	<select id="memInfo" parameterType="String" resultType="bdhresVo">
+		select a.client_name, a.client_tel, b.MEM_REGNO1 from client a, member b 
+		where a.CLIENT_ID = b.MEM_ID 
+		and a.client_id = #{client_id}
+	</select>
+	
+	<!-- 다시 예약할 수있는 날짜 업데이트 -->
+	<update id="ableResUpdate" parameterType="bdhresVo">
+		UPDATE reservation
+		SET res_able = TO_CHAR(TO_DATE(day_code, 'YYYY/MM/DD') + (select DT_PERIOD from DONATION_TYPE where dt_type = #{dt_type}), 'YYYY/MM/DD')
+		WHERE mem_id = #{mem_id} AND res_type = #{res_type}
+	</update>
+	
+	<!-- 헌혈종류 기간 -->
+	<select id="typePeriod" parameterType="String" resultType="String">
+		select DT_PERIOD from DONATION_TYPE where dt_type = #{dt_type}
+	</select>
+	
+	<!-- 예약 가능여부 체크(기간 만족시 예약 페이지로 이동할수있다) -->
+	<select id="chkAbleRes" parameterType="String" resultType="int">
+		SELECT count(*)
+		FROM reservation
+		<![CDATA[
+			WHERE mem_id=#{mem_id} AND TO_DATE(res_able, 'YYYY/MM/DD') <= SYSDATE
+		]]>
+	</select>
+	<select id="chkAbleRes2" parameterType="String" resultType="int">
+		SELECT count(*)
+		FROM reservation
+		<![CDATA[
+			WHERE mem_id=#{mem_id} AND TO_DATE(res_able, 'YYYY/MM/DD') >= SYSDATE
+		]]>
+	</select>
+	
+	<!-- 다음 예약가능일 -->
+	<select id="ableDate" parameterType="String" resultType="String">
+		select MAX(res_able) from reservation where mem_id=#{mem_id}
+	</select>
+	
+	<!-- 만약 다음 예약가능일이 현재날짜보다 적을 경우  -->
+	<update id="updateAbledateSysdate" parameterType="String">
+		UPDATE reservation 
+		SET res_able = sysdate 
+		<![CDATA[
+		WHERE mem_id = #{mem_id} AND res_able < sysdate
+		]]>
+	</update>
+	
+	<!-- 마지막 지정헌혈 날짜 -->
+	<select id="lastDdRes" parameterType="String" resultType="String">
+		select max(dd_able)
+		from dd_accept
+		where mem_id = #{mem_id}
+	</select>
+	<!-- 예약 여부 체크(지정헌헐예약이 있을경우 예약 불가) -->
+	<select id="chkDdRes" parameterType="String" resultType="int">
+		SELECT count(*)
+		FROM dd_accept
+		<![CDATA[
+			WHERE mem_id=#{mem_id} AND TO_DATE(dd_able, 'YY/MM/DD') >= SYSDATE
+		]]>
+	</select>
+</mapper>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="join">
+
+	<!-- 회원가입전 중복된 회원 체크 -->
+	<select id="regnoChk" parameterType="joinVo" resultType="int">
+		select count(*)
+		from member
+		where mem_regno1 = #{mem_regno1}
+		and mem_regno2 = #{mem_regno2}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="insertClient" parameterType="joinVo">
+		insert into client(client_id, auth_code, client_pass, client_name, client_tel, client_addr)
+		values(#{mem_id}, '1', #{client_pass}, #{client_name}, #{client_tel}, #{client_addr})
+	</insert>
+	
+	<!-- 회원가입 -->
+	<insert id="insertMember" parameterType="joinVo">
+		insert into member(mem_id, mem_blood_type, mem_regno1, mem_regno2)
+		values(#{mem_id}, #{mem_blood_type}, #{mem_regno1}, #{mem_regno2})
+	</insert>
+	
+	<!-- 아이디 중복확인 -->
+	<select id="idCheck" parameterType="string" resultType="string">
+		select mem_id from member where mem_id = #{mem_id}
+	</select>
+	
+	<!-- 동 이름으로 주소검색 -->
+	<select id="selectByDong" parameterType="string" resultType="joinzipVo">
+		select * from ziptb where dong like #{data}||'%'
+	</select>
+	
+	<!-- 아이디 찾기 -->
+	<select id="findId" parameterType="joinVo" resultType="string">
+		select b.mem_id
+		from client a, member b
+		where a.client_id = b.mem_id
+		and a.client_name = #{client_name}
+		and b.mem_regno1 = #{mem_regno1}
+		and b.mem_regno2 = #{mem_regno2}
+	</select>
+	
+	<!-- 비밀번호 찾기 -->
+	<select id="findPassword" parameterType="joinVo" resultType="string">
+		select b.mem_id
+		from client a, member b
+		where a.client_id = b.mem_id
+		and b.mem_id = #{mem_id}
+		and a.client_name = #{client_name}
+		and b.mem_regno1 = #{mem_regno1}
+		and b.mem_regno2 = #{mem_regno2}
+	</select>
+	 
+	<!-- 비밀번호 변경 -->
+	<update id="updatePassword" parameterType="joinVo">
+		update client set
+		client_pass = #{client_pass}
+		where client_id = #{mem_id}
+	</update>
+	
+	<!-- 회원정보 조회 -->
+	<select id="memberInfo" parameterType="joinVo" resultType="joinVo">
+		select a.auth_code, a.client_pass, a.client_name, a.client_tel,
+			   case when instr(a.client_addr, ',') = 0 then a.client_addr
+			   else substr(a.client_addr, 1, instr(a.client_addr, ',', -1) -1)
+			   end as client_addr, 
+			   case when instr(a.client_addr, ',') = 0
+			   then ''
+			   else substr(a.client_addr, instr(a.client_addr, ',', -1) +1)
+			   end as client_detail_addr, b.mem_id, b.mem_blood_type, b.mem_regno1, b.mem_regno2
+		from client a, member b
+		where a.client_id = b.mem_id
+		and a.client_id = #{mem_id}
+		and a.client_pass = #{client_pass}
+	</select>
+	
+	<!-- 회원정보 수정 -->
+	<update id="updateMember" parameterType="joinVo">
+		update client set client_pass = #{client_pass}, client_tel = #{client_tel}, client_addr = #{client_addr}
+		where client_id = #{mem_id}
+	</update>
+	
+</mapper>

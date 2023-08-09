@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+#pl-title{
+	width:100%;
+	padding-bottom:30px;
+	border-bottom:2px solid #d9534f;
+	margin-bottom: 50px;
+}
+#pl-title h1{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+#pl-info{
+		width: 100%;
+		margin: 50px 0 10px 0;
+		display: flex;
+
+		border: 2px solid #dad8d9;
+		border-radius:15px;
+		height: 150px;
+}
+#info-img{
+	flex:10%;
+}
+#book{
+	width: 50px;
+	height: 50px;
+	margin: 40px auto;
+}
+#info-text{
+	flex: 90%;
+}
+#info-text div{
+	margin:30px auto;
+	color:#444;
+}
+#sTitle{
+	font-weight: bold;
+	font-size: 1.3em;
+	color: #b02a37;
+	
+}
+#info-content h1{
+	font-weight: bold;
+	font-size: 1.3em;
+	color:#b02a37;
+}
+
+#info-content h2{
+	font-weight: bold;
+	font-size: 1.2em;
+}

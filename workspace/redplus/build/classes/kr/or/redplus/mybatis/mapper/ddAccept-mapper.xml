@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ddAccept">
+
+
+	<select id="ddList" resultType="acceptVo">
+		SELECT a.*, c.*, b.hos_region  
+		FROM directed_donation a
+		INNER JOIN hospital b ON a.hos_id = b.hos_id
+		LEFT JOIN client c ON b.hos_id = c.client_id
+		LEFT JOIN dd_accept d ON d.dd_code = a.DD_CODE
+		WHERE d.dd_code IS NULL
+<!-- 		AND TO_DATE(a.dd_date, 'YY-MM-DD') >= TRUNC(SYSDATE) -->
+	</select>
+	
+	<select id="getBloodType" parameterType="string" resultType="string">
+		select a.mem_blood_type
+			from member a, client b
+			where a.mem_id = b.client_id
+			and b.client_id = #{data}
+	</select>
+	
+	<select id="ddDetail" parameterType="string" resultType="ddonVo">
+		select * from directed_donation
+		WHERE dd_code = #{data}
+	</select>
+
+	<select id="getHosInfo" parameterType="string" resultType="clientVo">
+		select * from client
+		where client_id = #{data}
+	</select>
+	
+	<select id="resTimeCheck" resultType="string" parameterType="string">
+		select max(res_able) from reservation
+		where mem_id=#{data}
+	</select>
+	
+	<select id="ddTimeCheck" resultType="string" parameterType="string">
+		SELECT TO_CHAR(MAX(TO_DATE(dd_able, 'YY/MM/DD')), 'YYYY/MM/DD') AS result
+		FROM dd_accept
+		WHERE mem_id = #{data}
+	</select>
+	
+	<insert id="acceptSet" parameterType="acceptVo">
+		insert into dd_accept values(#{dd_code}, #{client_id}, #{dd_date},
+		TO_CHAR(TO_DATE(#{dd_date}, 'YY/MM/DD') + 
+		(select DT_PERIOD from DONATION_TYPE where dt_type = #{dd_bd_type}), 'YY/MM/DD'))
+	</insert>
+	
+	<select id="getDdCount" parameterType="string" resultType="int">
+		select count(*) from dd_accept
+		where mem_id= #{data}
+	</select>
+	
+	<select id="getDdList" parameterType="string" resultType="ddListVo">
+		select a.*, b.DD_BLOOD_TYPE, b.DD_BD_TYPE, c.CLIENT_NAME from dd_accept a, directed_donation b, client c 
+		where mem_id= #{data}
+		and TO_DATE(a.dda_date, 'YY-MM-DD') >= TRUNC(SYSDATE)
+		and a.DD_CODE = b.dd_code
+		and b.hos_id = c.CLIENT_ID
+	</select>
+	
+	<delete id="deleteDd" parameterType="string">
+		delete from dd_accept where DD_CODE=#{data}
+	</delete>
+	
+	<select id="listDdAll" parameterType="string" resultType="ddListVo">
+		select a.*, b.DD_BD_TYPE, c.CLIENT_NAME from dd_accept a,directed_donation b, client c
+    	where a.mem_id = #{data}
+    	and a.DD_CODE = b.dd_code
+    	and b.HOS_ID = c.client_id
+    	<![CDATA[
+    	and TO_DATE(a.dda_date, 'YY-MM-DD') <= TRUNC(SYSDATE)
+    	]]>	
+	</select>
+	
+</mapper>

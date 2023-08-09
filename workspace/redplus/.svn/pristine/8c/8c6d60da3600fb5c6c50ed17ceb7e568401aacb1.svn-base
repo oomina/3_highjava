@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 mybatis의 환경 설정에 사용되는 XML문서입니다. -->
+<!DOCTYPE configuration 
+	PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+	
+<configuration>
+	<!-- DB연결 정보가 저장된 properties파일 정보 설정하기 -->
+	<properties resource="kr/or/redplus/mybatis/config/dbinfo.properties" />
+	
+	<!-- 기본 설정 셋팅 -->
+	<settings>
+		<!-- 데이터가 null로 전달되었으면 빈 칸으로 인식하지 말고 null로 인식해라... -->
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	
+	<!-- typeAlais 설정하기 -->
+	<typeAliases>	
+		<!-- 민욱 -->
+		<typeAlias type="kr.or.redplus.vo.eq.EqVO" alias="eqVo"/>
+		<typeAlias type="kr.or.redplus.vo.bdhres.BdhResVO" alias="bdhresVo"/>
+		<typeAlias type="kr.or.redplus.vo.donation.DonationVO" alias="donationVo"/>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- 수진 -->
+		<typeAlias type="kr.or.redplus.vo.BoardVO" alias="boardVo"/>
+		<typeAlias type="kr.or.redplus.vo.ReplyVO" alias="replyVo"/>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- 현성 -->
+		<typeAlias type="kr.or.redplus.vo.Res_manageVO" alias="resManageVo"/>
+		<typeAlias type="kr.or.redplus.vo.ResDetailVO" alias="resDetailVo"/>	
+		<typeAlias type="kr.or.redplus.vo.ClientVO" alias="clientVo"/>	
+		<typeAlias type="kr.or.redplus.vo.BdCardLssuedVO" alias="BCLVo"/>
+		<typeAlias type="kr.or.redplus.vo.MemberVO" alias="memberVo"/>	
+		<typeAlias type="kr.or.redplus.vo.Blood_stockVO" alias="stockVo"/>	
+		<typeAlias type="kr.or.redplus.vo.Don_acceptVO" alias="acceptVo"/>	
+		<typeAlias type="kr.or.redplus.vo.DdListVO" alias="ddListVo"/>	
+
+
+
+
+
+
+
+
+
+		<!-- 미나 -->
+		<typeAlias type="kr.or.redplus.vo.JoinVO" alias="joinVo"/>
+		<typeAlias type="kr.or.redplus.vo.JoinZipVO" alias="joinzipVo"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- 기태 -->
+		<typeAlias type="kr.or.redplus.vo.Direct_donaVO" alias="ddonVo"/>
+		<typeAlias type="kr.or.redplus.vo.HospitalVO" alias="hospitalVo"/>
+		<typeAlias type="kr.or.redplus.vo.Blood_applyVO" alias="bdAppVo"/>
+		<typeAlias type="kr.or.redplus.vo.common.BloodCountVO" alias="bloodCountVo"/>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	</typeAliases>
+	
+	<!-- DB연결 설정하기 -->
+	<environments default="oracleEnv">
+		<environment id="oracleEnv">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}"/>
+				<property name="url" value="${url}"/>
+				<property name="username" value="${user}"/>
+				<property name="password" value="${pass}"/>
+			</dataSource>
+			
+		</environment>
+	</environments>
+	
+	<!-- DB에 사용되는 SQL문이 저장된 mapper파일 등록하는 부분 -->
+	<mappers>
+		<!-- 민욱 -->
+		<mapper resource="kr/or/redplus/mybatis/mapper/eq-mapper.xml"/>
+		<mapper resource="kr/or/redplus/mybatis/mapper/bdhres-mapper.xml"/>
+		<mapper resource="kr/or/redplus/mybatis/mapper/resList-mapper.xml"/>
+		<mapper resource="kr/or/redplus/mybatis/mapper/donation-mapper.xml"/>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- 수진 -->		
+		<mapper resource="kr/or/redplus/mybatis/mapper/board-mapper.xml"/>
+		<mapper resource="kr/or/redplus/mybatis/mapper/reply-mapper.xml"/>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- 현성 -->
+		<mapper resource="kr/or/redplus/mybatis/mapper/resManage-mapper.xml"/>
+		<mapper resource="kr/or/redplus/mybatis/mapper/login-mapper.xml"/>
+		<mapper resource="kr/or/redplus/mybatis/mapper/BCL-mapper.xml"/>		
+		<mapper resource="kr/or/redplus/mybatis/mapper/stock-mapper.xml"/>	
+		<mapper resource="kr/or/redplus/mybatis/mapper/ddAccept-mapper.xml"/>	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- 미나 -->
+		<mapper resource="kr/or/redplus/mybatis/mapper/join-mapper.xml"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- 기태 -->
+		<mapper resource="kr/or/redplus/mybatis/mapper/direct-don.xml"/>	
+		<mapper resource="kr/or/redplus/mybatis/mapper/hospital-mapper.xml"/>	
+		<mapper resource="kr/or/redplus/mybatis/mapper/common-mapper.xml"/>	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	</mappers>
+
+
+</configuration>	

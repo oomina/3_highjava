@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+	<!-- 게시글 작성 -->
+	<insert id="insertBoard" parameterType="boardVo">
+		insert into "REDPLUS"."BOARD" (board_code, board_title, board_content, write_date, modify_date, view_cnt, client_id) 
+		values (#{board_code}, #{board_title}, #{board_content}, sysdate, sysdate, #{view_cnt}, #{client_id})
+	</insert>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="deleteBoard" parameterType="String">
+		delete from board 
+		where board_code = #{board_code}
+	</delete>
+	
+	<!-- 게시글 수정: 제목, 내용, 수정날짜 -->
+	<update id="updateBoard" parameterType="boardVo">
+		update board 
+		set board_title = #{board_title}, 
+			board_content = #{board_content},
+			modify_date = #{modify_date}
+		where board_code = #{board_code}
+	</update>
+	
+	<!-- 전체 글 갯수 구하기 -->
+	
+	
+	
+	
+</mapper>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

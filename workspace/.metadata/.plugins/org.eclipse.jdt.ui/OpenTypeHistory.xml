@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=javaNetworkTest/C:\/Program Files\/Java\/jre1.8.0_202\/lib\/rt.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.lang(Thread.class[Thread" modifiers="33" timestamp="1672642449709"/>
+    <typeInfo handle="=jdbcTest/src&lt;kr.or.ddit.mvc.dao{IMemberDao.java[IMemberDao" modifiers="513" timestamp="1679277828676"/>
+    <typeInfo handle="=mybatisJdbcBoardTest/src&lt;kr.or.ddit.board.dao{IJdbcBoardDao.java[IJdbcBoardDao" modifiers="513" timestamp="1679617029928"/>
+    <typeInfo handle="=webTest/D:\/A_TeachingMaterial\/webpro\/apache-tomcat-8.5.85\/lib\/servlet-api.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javaee\/7\/api\/=/=/owner.project.facets=/jst.web=/&lt;javax.servlet.http(HttpServlet.class[HttpServlet" modifiers="1057" timestamp="1673363356000"/>
+    <typeInfo handle="=webTest/src\/main\/java&lt;kr.or.ddit.basic.json{ILprodDao.java[ILprodDao" modifiers="513" timestamp="1680233468638"/>
+    <typeInfo handle="=webTest/src\/main\/java&lt;kr.or.ddit.basic.json{ILprodService.java[ILprodService" modifiers="513" timestamp="1680233212326"/>
+    <typeInfo handle="=webTest/src\/main\/java&lt;kr.or.ddit.basic.fileupload.dao{IFileinfoDao.java[IFileinfoDao" modifiers="513" timestamp="1680486495467"/>
+    <typeInfo handle="=webTest/src\/main\/java&lt;kr.or.ddit.basic.fileupload.service{IFileinfoService.java[IFileinfoService" modifiers="513" timestamp="1680486487453"/>
+    <typeInfo handle="=webTest/src\/main\/java&lt;kr.or.ddit.basic.member.dao{IMemberDao.java[IMemberDao" modifiers="513" timestamp="1680748346969"/>
+    <typeInfo handle="=webTest/src\/main\/java&lt;kr.or.ddit.basic.member.service{IMemberService.java[IMemberService" modifiers="513" timestamp="1680748364058"/>
+</typeInfoHistroy>
